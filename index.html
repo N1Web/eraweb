@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Edik | ERAWEb — Digital Craftsman</title>
-  <meta name="description" content="Edik — creative developer & web architect. Premium, high-performance websites and digital growth for businesses that want to stand out.">
+  <title id="pageTitle">Edik | ERAWEb — Digital Craftsman</title>
+  <meta name="description" id="pageDesc" content="Edik — creative developer & web architect. Premium, high-performance websites and digital growth for businesses that want to stand out.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -288,6 +288,46 @@
 
     .nav-links a:hover::after {
       width: 100%;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 4px;
+      background: rgba(198, 165, 96, 0.08);
+      border: 1px solid rgba(198, 165, 96, 0.25);
+      border-radius: 30px;
+      padding: 3px;
+      margin-left: 1.5rem;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 0.35rem 0.7rem;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: 0.2s;
+      font-family: inherit;
+    }
+
+    .lang-btn:hover {
+      color: var(--gold-light);
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+      color: #0a0a0a;
+    }
+
+    @media (max-width: 768px) {
+      .lang-switch {
+        margin-left: 0;
+        margin-top: 0.6rem;
+      }
     }
 
     .hero {
@@ -1473,7 +1513,7 @@
 
   <div id="preloader">
     <div class="loader-mark"><i class="fas fa-spider"></i></div>
-    <div class="loader-text">ERA<span>WEb</span> · loading experience</div>
+    <div class="loader-text">ERA<span>WEb</span> · <span data-i18n="preloader.loading">loading experience</span></div>
   </div>
 
   <div class="cursor-dot" id="cursorDot"></div>
@@ -1487,18 +1527,23 @@
         <div class="logo">
           <div class="logo-text-wrap">
             <span class="logo-text">ERAWEb</span>
-            <span class="logo-sub">Edik</span>
+            <span class="logo-sub" data-i18n="logo.sub">Edik</span>
           </div>
         </div>
         <div class="nav-links">
-          <a href="#home" class="nav-link">Home</a>
-          <a href="#skills" class="nav-link">Skills</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#projects" class="nav-link">Work</a>
-          <a href="#pricing" class="nav-link">Pricing</a>
-          <a href="#offers" class="nav-link">Offers</a>
-          <a href="#advertising" class="nav-link">Services</a>
-          <a href="#contact" class="nav-link">Contact</a>
+          <a href="#home" class="nav-link" data-i18n="nav.home">Home</a>
+          <a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a>
+          <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+          <a href="#projects" class="nav-link" data-i18n="nav.work">Work</a>
+          <a href="#pricing" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+          <a href="#offers" class="nav-link" data-i18n="nav.offers">Offers</a>
+          <a href="#advertising" class="nav-link" data-i18n="nav.services">Services</a>
+          <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn active" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="es">ES</button>
+          <button type="button" class="lang-btn" data-lang="hy">HY</button>
         </div>
       </nav>
     </div>
@@ -1515,34 +1560,34 @@
         </div>
         <div class="hero-content">
           <div class="badge reveal">
-            <i class="fas fa-crown"></i> GOLDEN TOUCH · DIGITAL CRAFTSMAN
+            <i class="fas fa-crown"></i> <span data-i18n="hero.badge">GOLDEN TOUCH · DIGITAL CRAFTSMAN</span>
           </div>
-          <h1 class="reveal">Hi, I'm Edik — spinning digital <span class="highlight">masterpieces</span> with precision</h1>
-          <div class="description reveal">
+          <h1 class="reveal" data-i18n="hero.h1">Hi, I'm Edik — spinning digital <span class="highlight">masterpieces</span> with precision</h1>
+          <div class="description reveal" data-i18n="hero.desc">
             Creative developer & web architect. I design immersive, high-performance websites that stand out. This is my ERAWEb portfolio, where every project shines like gold.
           </div>
-          <p class="reveal" style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 560px; margin-bottom: 1.8rem;">
+          <p class="reveal" data-i18n="hero.para" style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; max-width: 560px; margin-bottom: 1.8rem;">
             From bold landing pages to full-scale business platforms, I combine cutting-edge design with clean, maintainable code. Every pixel is intentional. Every interaction is smooth. I don't just build websites — I build your digital identity.
           </p>
 
           <div class="hero-stats reveal">
             <div class="hero-stat">
               <div class="stat-num" data-count="10">0</div>
-              <div class="stat-label">Projects delivered</div>
+              <div class="stat-label" data-i18n="hero.stat1">Projects delivered</div>
             </div>
             <div class="hero-stat">
               <div class="stat-num" data-count="100">0</div>
-              <div class="stat-label">Client satisfaction %</div>
+              <div class="stat-label" data-i18n="hero.stat2">Client satisfaction %</div>
             </div>
             <div class="hero-stat">
               <div class="stat-num" data-count="24">0</div>
-              <div class="stat-label">Hour avg. response</div>
+              <div class="stat-label" data-i18n="hero.stat3">Hour avg. response</div>
             </div>
           </div>
 
           <div class="hero-actions reveal">
-            <a href="#projects" class="cta-btn cta-btn-solid nav-link"><i class="fas fa-diamond"></i> See my work</a>
-            <a href="#contact" class="cta-btn nav-link"><i class="fas fa-paper-plane"></i> Start a project</a>
+            <a href="#projects" class="cta-btn cta-btn-solid nav-link"><i class="fas fa-diamond"></i> <span data-i18n="hero.cta1">See my work</span></a>
+            <a href="#contact" class="cta-btn nav-link"><i class="fas fa-paper-plane"></i> <span data-i18n="hero.cta2">Start a project</span></a>
           </div>
 
           <div class="hero-social reveal">
@@ -1552,29 +1597,29 @@
           </div>
         </div>
       </div>
-      <div class="scroll-cue"><span>scroll</span><i class="fas fa-chevron-down"></i></div>
+      <div class="scroll-cue"><span data-i18n="scroll.cue">scroll</span><i class="fas fa-chevron-down"></i></div>
     </section>
 
     <section id="skills">
       <div class="skills-section">
         <div class="section-title reveal">
           <i class="fas fa-cog gold-accent"></i>
-          <span>Golden toolbox & expertise</span>
+          <span data-i18n="skills.title">Golden toolbox & expertise</span>
         </div>
-        <p class="section-subtitle reveal">I use modern, battle-tested tools to deliver fast, reliable, and visually striking digital experiences.</p>
+        <p class="section-subtitle reveal" data-i18n="skills.subtitle">I use modern, battle-tested tools to deliver fast, reliable, and visually striking digital experiences.</p>
         <div class="skills-grid">
-          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fab fa-node-js"></i> Node.js</div>
-          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fab fa-js"></i> JavaScript</div>
-          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fab fa-html5"></i> Html/CSS</div>
-          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fab fa-python"></i> Python/C++</div>
-          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fab fa-figma"></i> UI/UX Design</div>
-          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fas fa-microchip"></i> Electric Tech</div>
-          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fas fa-microchip"></i> Soldering/Wiring</div>
-          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fas fa-microchip"></i> Arduino</div>
-          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fab fa-instagram"></i> Social Media Ads</div>
-          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fas fa-search"></i> SEO Optimization</div>
-          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fas fa-mobile-alt"></i> Responsive Design</div>
-          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fas fa-server"></i> Web Hosting & Deploy</div>
+          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fab fa-node-js"></i> <span data-i18n="skill.node">Node.js</span></div>
+          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fab fa-js"></i> <span data-i18n="skill.js">JavaScript</span></div>
+          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fab fa-html5"></i> <span data-i18n="skill.html">Html/CSS</span></div>
+          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fab fa-python"></i> <span data-i18n="skill.python">Python/C++</span></div>
+          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fab fa-figma"></i> <span data-i18n="skill.uiux">UI/UX Design</span></div>
+          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fas fa-microchip"></i> <span data-i18n="skill.electric">Electric Tech</span></div>
+          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fas fa-microchip"></i> <span data-i18n="skill.solder">Soldering/Wiring</span></div>
+          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fas fa-microchip"></i> <span data-i18n="skill.arduino">Arduino</span></div>
+          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fab fa-instagram"></i> <span data-i18n="skill.socialads">Social Media Ads</span></div>
+          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fas fa-search"></i> <span data-i18n="skill.seo">SEO Optimization</span></div>
+          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fas fa-mobile-alt"></i> <span data-i18n="skill.responsive">Responsive Design</span></div>
+          <div class="skill-card reveal" data-tilt data-tilt-max="10"><i class="fas fa-server"></i> <span data-i18n="skill.hosting">Web Hosting & Deploy</span></div>
         </div>
       </div>
     </section>
@@ -1583,43 +1628,43 @@
       <div class="about-section">
         <div class="section-title reveal">
           <i class="fas fa-user gold-accent"></i>
-          <span>About me</span>
+          <span data-i18n="about.title">About me</span>
         </div>
         <div class="about-grid reveal">
           <div class="about-mission">
-            <h3><i class="fas fa-gem"></i> Democratizing digital excellence</h3>
-            <div class="mission-text">
+            <h3><i class="fas fa-gem"></i> <span data-i18n="about.h3">Democratizing digital excellence</span></h3>
+            <div class="mission-text" data-i18n="about.mission1">
               I'm <span class="highlight-mission">Edik</span> — a full-stack developer and web architect with a simple belief: <strong>every business deserves a powerful online presence without the astronomical price tag.</strong>
               The web industry often charges excessive fees, blocking small businesses from growing. I decided to change that.
             </div>
-            <div class="mission-text">
+            <div class="mission-text" data-i18n="about.mission2">
               I believe in fair, transparent pricing. I craft high-end, modern websites and digital tools at a fraction of the regular cost — <span class="highlight-mission">because opportunity shouldn't be a luxury.</span> Let's expand your business together.
             </div>
-            <div class="mission-text">
+            <div class="mission-text" data-i18n="about.mission3">
               Beyond web development, I offer a full range of digital services — targeted social media advertising, brand strategy, and ongoing support. Whether you're a local shop just getting started or an established company looking to modernize, I've got you covered from first click to loyal customer, working directly with you at every step.
             </div>
             <div style="margin-top: 1rem; display: flex; gap: 12px; flex-wrap: wrap;">
-              <span style="background: rgba(198,165,96,0.1); border-radius: 60px; padding: 0.3rem 1rem; font-size: 0.8rem;"><i class="fas fa-hand-holding-heart"></i> Fair pricing</span>
-              <span style="background: rgba(198,165,96,0.1); border-radius: 60px; padding: 0.3rem 1rem; font-size: 0.8rem;"><i class="fas fa-rocket"></i> Modern stack</span>
-              <span style="background: rgba(198,165,96,0.1); border-radius: 60px; padding: 0.3rem 1rem; font-size: 0.8rem;"><i class="fas fa-chart-line"></i> Business growth</span>
-              <span style="background: rgba(198,165,96,0.1); border-radius: 60px; padding: 0.3rem 1rem; font-size: 0.8rem;"><i class="fab fa-instagram"></i> Social advertising</span>
+              <span style="background: rgba(198,165,96,0.1); border-radius: 60px; padding: 0.3rem 1rem; font-size: 0.8rem;"><i class="fas fa-hand-holding-heart"></i> <span data-i18n="about.tag1">Fair pricing</span></span>
+              <span style="background: rgba(198,165,96,0.1); border-radius: 60px; padding: 0.3rem 1rem; font-size: 0.8rem;"><i class="fas fa-rocket"></i> <span data-i18n="about.tag2">Modern stack</span></span>
+              <span style="background: rgba(198,165,96,0.1); border-radius: 60px; padding: 0.3rem 1rem; font-size: 0.8rem;"><i class="fas fa-chart-line"></i> <span data-i18n="about.tag3">Business growth</span></span>
+              <span style="background: rgba(198,165,96,0.1); border-radius: 60px; padding: 0.3rem 1rem; font-size: 0.8rem;"><i class="fab fa-instagram"></i> <span data-i18n="about.tag4">Social advertising</span></span>
             </div>
           </div>
           <div class="values-list">
             <div class="value-card" data-tilt data-tilt-max="6">
               <div class="value-name">
-                <i class="fas fa-user-astronaut"></i> Direct, 1-on-1 collaboration
+                <i class="fas fa-user-astronaut"></i> <span data-i18n="about.value1.name">Direct, 1-on-1 collaboration</span>
               </div>
-              <div class="value-desc">No account managers, no middlemen. You work directly with me from the first call to final launch — clear communication, every step of the way.</div>
+              <div class="value-desc" data-i18n="about.value1.desc">No account managers, no middlemen. You work directly with me from the first call to final launch — clear communication, every step of the way.</div>
             </div>
             <div class="value-card" data-tilt data-tilt-max="6">
               <div class="value-name">
-                <i class="fas fa-bolt"></i> Fast, focused turnaround
+                <i class="fas fa-bolt"></i> <span data-i18n="about.value2.name">Fast, focused turnaround</span>
               </div>
-              <div class="value-desc">Without a big team to coordinate, projects move faster. You get a dedicated builder focused entirely on getting your site right.</div>
+              <div class="value-desc" data-i18n="about.value2.desc">Without a big team to coordinate, projects move faster. You get a dedicated builder focused entirely on getting your site right.</div>
             </div>
             <div class="quote-card">
-              <div class="quote-text">
+              <div class="quote-text" data-i18n="about.quote">
                 "I started this because I was frustrated watching great local businesses get left behind online. If you have a vision, I have the tools to make it real — at a price that makes sense."
               </div>
             </div>
@@ -1632,19 +1677,19 @@
       <div class="projects-section">
         <div class="section-title reveal">
           <i class="fas fa-globe gold-accent"></i>
-          <span>Websites I've Made, Worked On, Worked With</span>
+          <span data-i18n="projects.title">Websites I've Made, Worked On, Worked With</span>
         </div>
-        <p class="section-subtitle reveal">Coming soon.</p>
+        <p class="section-subtitle reveal" data-i18n="projects.subtitle">Coming soon.</p>
         <div class="projects-grid projects-grid-empty">
           <div class="project-card project-placeholder reveal" data-tilt data-tilt-max="6">
             <div class="project-icon"><i class="fas fa-hourglass-half"></i></div>
-            <h3>Coming Soon</h3>
-            <p>This is where your website will be presented.</p>
+            <h3 data-i18n="projects.placeholder.title">Coming Soon</h3>
+            <p data-i18n="projects.placeholder.desc">This is where your website will be presented.</p>
           </div>
         </div>
         <div style="margin-top: 1.5rem; text-align: center;">
           <a href="#contact" class="cta-btn cta-btn-solid nav-link">
-            <i class="fas fa-plus"></i> Get a website for your business
+            <i class="fas fa-plus"></i> <span data-i18n="projects.cta">Get a website for your business</span>
           </a>
         </div>
       </div>
@@ -1655,49 +1700,49 @@
       <div class="pricing-section">
         <div class="section-title reveal">
           <i class="fas fa-hand-holding-dollar gold-accent"></i>
-          <span>Transparent, fair pricing</span>
+          <span data-i18n="pricing.title">Transparent, fair pricing</span>
         </div>
-        <p class="section-subtitle reveal">Here's what a custom, fully animated site like this one typically costs in today's market — and what I actually charge for the same quality.</p>
+        <p class="section-subtitle reveal" data-i18n="pricing.subtitle">Here's what a custom, fully animated site like this one typically costs in today's market — and what I actually charge for the same quality.</p>
 
         <div class="pricing-compare reveal">
           <div class="price-card price-card-market" data-tilt data-tilt-max="6">
-            <div class="price-card-label">Industry average (2026)</div>
+            <div class="price-card-label" data-i18n="pricing.market.label">Industry average (2026)</div>
             <div class="price-card-amount">$3,000 – $8,000+</div>
-            <div class="price-card-desc">What agencies and most freelancers charge for a custom, animated site with this level of design and interactivity. Freelance web designer hourly rates currently run $75–$175/hr in North America and Europe.</div>
+            <div class="price-card-desc" data-i18n="pricing.market.desc">What agencies and most freelancers charge for a custom, animated site with this level of design and interactivity. Freelance web designer hourly rates currently run $75–$175/hr in North America and Europe.</div>
           </div>
           <div class="price-card price-card-mine" data-tilt data-tilt-max="6">
-            <div class="price-card-badge"><i class="fas fa-crown"></i> My rate</div>
-            <div class="price-card-label">What I charge</div>
+            <div class="price-card-badge"><i class="fas fa-crown"></i> <span data-i18n="pricing.mine.badge">My rate</span></div>
+            <div class="price-card-label" data-i18n="pricing.mine.label">What I charge</div>
             <div class="price-card-amount">$300 – $2,000</div>
-            <div class="price-card-desc">Same custom build, same animation and polish — priced fairly because good design shouldn't be reserved for big budgets. No agency markup, no middlemen.</div>
+            <div class="price-card-desc" data-i18n="pricing.mine.desc">Same custom build, same animation and polish — priced fairly because good design shouldn't be reserved for big budgets. No agency markup, no middlemen.</div>
           </div>
         </div>
 
         <div class="pricing-tiers reveal">
           <div class="tier-card" data-tilt data-tilt-max="6">
-            <div class="tier-name">Starter</div>
+            <div class="tier-name" data-i18n="pricing.tier1.name">Starter</div>
             <div class="tier-price">$300 – $700</div>
-            <div class="tier-desc">A clean, single-page site — perfect for a simple, professional presence.</div>
+            <div class="tier-desc" data-i18n="pricing.tier1.desc">A clean, single-page site — perfect for a simple, professional presence.</div>
           </div>
           <div class="tier-card" data-tilt data-tilt-max="6">
-            <div class="tier-name">Standard</div>
+            <div class="tier-name" data-i18n="pricing.tier2.name">Standard</div>
             <div class="tier-price">$800 – $1,500</div>
-            <div class="tier-desc">Multi-section custom site with tailored design — similar to this portfolio.</div>
+            <div class="tier-desc" data-i18n="pricing.tier2.desc">Multi-section custom site with tailored design — similar to this portfolio.</div>
           </div>
           <div class="tier-card" data-tilt data-tilt-max="6">
-            <div class="tier-name">Premium</div>
+            <div class="tier-name" data-i18n="pricing.tier3.name">Premium</div>
             <div class="tier-price">$1,500 – $2,000</div>
-            <div class="tier-desc">Full animation, 3D effects, and interactive polish — the works.</div>
+            <div class="tier-desc" data-i18n="pricing.tier3.desc">Full animation, 3D effects, and interactive polish — the works.</div>
           </div>
         </div>
 
-        <p class="pricing-sources reveal">
+        <p class="pricing-sources reveal" data-i18n="pricing.sources">
           Market figures based on 2026 industry research: <a href="https://projectcostestimator.com/freelance-website-cost" target="_blank">Project Cost Estimator</a>, <a href="https://www.jim.com/blog/small-business-website-cost" target="_blank">Jim.com</a>, <a href="https://www.biztoolkit.co/post/website-designer-rates-2026" target="_blank">BizToolkit</a>, <a href="https://www.webfx.com/web-design/pricing/" target="_blank">WebFX</a>, and <a href="https://www.gingeritsolutions.com/blog/how-much-does-a-custom-web-design-cost-in-2026/" target="_blank">Ginger IT Solutions</a>.
         </p>
 
         <div style="margin-top: 1.5rem;">
           <a href="#contact" class="cta-btn cta-btn-solid nav-link">
-            <i class="fas fa-paper-plane"></i> Get a quote for your project
+            <i class="fas fa-paper-plane"></i> <span data-i18n="pricing.cta">Get a quote for your project</span>
           </a>
         </div>
       </div>
@@ -1708,27 +1753,27 @@
       <div class="offers-section">
         <div class="section-title reveal">
           <i class="fas fa-gift gold-accent"></i>
-          <span>Offers & bonuses</span>
+          <span data-i18n="offers.title">Offers & bonuses</span>
         </div>
-        <p class="section-subtitle reveal">A few ways I like to say thank you — and sweeten the deal.</p>
+        <p class="section-subtitle reveal" data-i18n="offers.subtitle">A few ways I like to say thank you — and sweeten the deal.</p>
 
         <div class="offers-grid reveal">
           <div class="offer-card offer-card-limited" data-tilt data-tilt-max="6">
-            <div class="offer-badge"><i class="fas fa-clock"></i> Limited offer — leaving soon</div>
-            <h4><i class="fas fa-star"></i> Free advertising on this website</h4>
-            <p>Buy a website from me, and if you'd like, I'll feature your business right here on ERAWEb for advertising — completely free of charge. It's a limited-time offer, so it won't be around forever.</p>
+            <div class="offer-badge"><i class="fas fa-clock"></i> <span data-i18n="offers.limited.badge">Limited offer — leaving soon</span></div>
+            <h4><i class="fas fa-star"></i> <span data-i18n="offers.limited.h4">Free advertising on this website</span></h4>
+            <p data-i18n="offers.limited.desc">Buy a website from me, and if you'd like, I'll feature your business right here on ERAWEb for advertising — completely free of charge. It's a limited-time offer, so it won't be around forever.</p>
           </div>
           <div class="offer-card" data-tilt data-tilt-max="6">
-            <h4><i class="fas fa-ticket"></i> Referral discount code</h4>
-            <p>Buy a website or any other service and you'll get a personal discount code. Anyone who presents that code for a project gets up to 30% off.</p>
+            <h4><i class="fas fa-ticket"></i> <span data-i18n="offers.referral.h4">Referral discount code</span></h4>
+            <p data-i18n="offers.referral.desc">Buy a website or any other service and you'll get a personal discount code. Anyone who presents that code for a project gets up to 30% off.</p>
           </div>
         </div>
 
         <div class="bonus-card reveal" data-tilt data-tilt-max="4">
           <div class="bonus-icon"><i class="fas fa-handshake"></i></div>
           <div class="bonus-text">
-            <h4>Referral bonus</h4>
-            <p>Refer someone to me, and once we successfully finish a project together, you get <span class="highlight-mission">10% off your next service</span> — and it stacks. Every person you refer earns you another 10% off.</p>
+            <h4 data-i18n="offers.bonus.h4">Referral bonus</h4>
+            <p data-i18n="offers.bonus.desc">Refer someone to me, and once we successfully finish a project together, you get <span class="highlight-mission">10% off your next service</span> — and it stacks. Every person you refer earns you another 10% off.</p>
           </div>
         </div>
       </div>
@@ -1739,51 +1784,51 @@
       <div class="advertising-section">
         <div class="section-title reveal">
           <i class="fas fa-bullhorn gold-accent"></i>
-          <span>Advertising & Promotion Services</span>
+          <span data-i18n="services.title">Advertising & Promotion Services</span>
         </div>
-        <p class="adv-intro reveal">
+        <p class="adv-intro reveal" data-i18n="services.intro">
           Great websites are just the beginning. I also offer full advertising services — from showcasing your business online to running targeted Instagram campaigns that bring real customers through your door.
         </p>
 
         <!-- Sub-block 0: Services overview -->
         <div class="adv-block">
           <div class="adv-block-title reveal">
-            <i class="fas fa-layer-group"></i> Services I Offer
+            <i class="fas fa-layer-group"></i> <span data-i18n="services.block1.title">Services I Offer</span>
           </div>
-          <p class="adv-block-desc reveal">
+          <p class="adv-block-desc reveal" data-i18n="services.block1.desc">
             A quick overview of what I can help with — from getting your business seen to keeping your site running smoothly.
           </p>
           <div class="offer-services-grid">
             <div class="service-item-card reveal" data-tilt data-tilt-max="6">
               <div class="service-item-icon"><i class="fas fa-bullhorn"></i></div>
-              <h4>Marketing through this website</h4>
-              <p>Get your business featured and promoted right here on ERAWEb, in front of everyone who visits.</p>
+              <h4 data-i18n="services.item1.h4">Marketing through this website</h4>
+              <p data-i18n="services.item1.desc">Get your business featured and promoted right here on ERAWEb, in front of everyone who visits.</p>
             </div>
             <div class="service-item-card reveal" data-tilt data-tilt-max="6">
               <div class="service-item-icon"><i class="fab fa-instagram"></i></div>
-              <h4>Marketing through Instagram <span class="soon-badge">Coming soon</span></h4>
-              <p>Targeted Instagram campaigns to grow your audience and bring in real customers.</p>
+              <h4><span data-i18n="services.item2.h4">Marketing through Instagram</span> <span class="soon-badge" data-i18n="services.item2.soon">Coming soon</span></h4>
+              <p data-i18n="services.item2.desc">Targeted Instagram campaigns to grow your audience and bring in real customers.</p>
             </div>
             <div class="service-item-card reveal" data-tilt data-tilt-max="6">
               <div class="service-item-icon"><i class="fas fa-tools"></i></div>
-              <h4>Maintenance</h4>
-              <p>A monthly plan where I look after your website — updates, monitoring, and small fixes, so you don't have to think about it.</p>
+              <h4 data-i18n="services.item3.h4">Maintenance</h4>
+              <p data-i18n="services.item3.desc">A monthly plan where I look after your website — updates, monitoring, and small fixes, so you don't have to think about it.</p>
             </div>
             <div class="service-item-card reveal" data-tilt data-tilt-max="6">
               <div class="service-item-icon"><i class="fas fa-wrench"></i></div>
-              <h4>Rework & Fixing</h4>
-              <p>Already have a site that's broken, outdated, or just not working for you? I'll rework or fix it.</p>
+              <h4 data-i18n="services.item4.h4">Rework & Fixing</h4>
+              <p data-i18n="services.item4.desc">Already have a site that's broken, outdated, or just not working for you? I'll rework or fix it.</p>
             </div>
           </div>
-          <p class="service-pricing-note reveal"><i class="fas fa-circle-info"></i> All pricing varies by project — contact me for further details.</p>
+          <p class="service-pricing-note reveal"><i class="fas fa-circle-info"></i> <span data-i18n="services.note">All pricing varies by project — contact me for further details.</span></p>
         </div>
 
         <!-- Sub-block 2: Instagram Advertising -->
         <div class="adv-block">
           <div class="adv-block-title reveal">
-            <i class="fab fa-instagram"></i> Instagram Advertising — Grow Your Audience
+            <i class="fab fa-instagram"></i> <span data-i18n="services.block2.title">Instagram Advertising — Grow Your Audience</span>
           </div>
-          <p class="adv-block-desc reveal">
+          <p class="adv-block-desc reveal" data-i18n="services.block2.desc">
             New service — I now run professional Instagram ad campaigns for businesses. Reach the right people, grow your following, and turn scrollers into paying customers.
           </p>
           <div class="instagram-block reveal">
@@ -1791,44 +1836,44 @@
               <div class="instagram-logo">
                 <i class="fab fa-instagram"></i>
               </div>
-              <h4>Targeted Instagram Campaigns</h4>
-              <p>
+              <h4 data-i18n="services.ig.h4">Targeted Instagram Campaigns</h4>
+              <p data-i18n="services.ig.p1">
                 I handle everything — from designing scroll-stopping creatives to managing your ad budget and tracking results. Every campaign is built around your specific goals: whether that's growing brand awareness, driving traffic to your website, or converting followers into customers.
               </p>
-              <p>
+              <p data-i18n="services.ig.p2">
                 I work with local businesses, e-commerce brands, and service providers. No bloated agency retainers — just honest work, clear reporting, and results you can see.
               </p>
               <a href="#contact" class="cta-btn nav-link">
-                <i class="fab fa-instagram"></i> Start your campaign
+                <i class="fab fa-instagram"></i> <span data-i18n="services.ig.cta">Start your campaign</span>
               </a>
             </div>
             <div class="instagram-right">
               <div class="ig-feature">
                 <div class="ig-feature-icon"><i class="fas fa-crosshairs"></i></div>
                 <div class="ig-feature-text">
-                  <strong>Laser-targeted ads</strong>
-                  <span>I target your ideal audience by location, age, interests, and behavior so every dollar counts.</span>
+                  <strong data-i18n="services.ig.f1.strong">Laser-targeted ads</strong>
+                  <span data-i18n="services.ig.f1.span">I target your ideal audience by location, age, interests, and behavior so every dollar counts.</span>
                 </div>
               </div>
               <div class="ig-feature">
                 <div class="ig-feature-icon"><i class="fas fa-paint-brush"></i></div>
                 <div class="ig-feature-text">
-                  <strong>Custom creatives</strong>
-                  <span>Eye-catching posts, Stories, and Reels designed specifically for your brand and audience.</span>
+                  <strong data-i18n="services.ig.f2.strong">Custom creatives</strong>
+                  <span data-i18n="services.ig.f2.span">Eye-catching posts, Stories, and Reels designed specifically for your brand and audience.</span>
                 </div>
               </div>
               <div class="ig-feature">
                 <div class="ig-feature-icon"><i class="fas fa-chart-bar"></i></div>
                 <div class="ig-feature-text">
-                  <strong>Performance reporting</strong>
-                  <span>Clear, weekly reports showing reach, clicks, conversions, and cost per result — no jargon.</span>
+                  <strong data-i18n="services.ig.f3.strong">Performance reporting</strong>
+                  <span data-i18n="services.ig.f3.span">Clear, weekly reports showing reach, clicks, conversions, and cost per result — no jargon.</span>
                 </div>
               </div>
               <div class="ig-feature">
                 <div class="ig-feature-icon"><i class="fas fa-dollar-sign"></i></div>
                 <div class="ig-feature-text">
-                  <strong>Affordable packages</strong>
-                  <span>Flexible plans starting from any budget. I scale up as your business grows.</span>
+                  <strong data-i18n="services.ig.f4.strong">Affordable packages</strong>
+                  <span data-i18n="services.ig.f4.span">Flexible plans starting from any budget. I scale up as your business grows.</span>
                 </div>
               </div>
             </div>
@@ -1842,11 +1887,11 @@
       <div class="contact-section">
         <div class="section-title reveal">
           <i class="fas fa-address-card gold-accent"></i>
-          <span>Reach out to me</span>
+          <span data-i18n="contact.title">Reach out to me</span>
         </div>
         <div class="contact-grid reveal">
           <div class="contact-info">
-            <h3><i class="fas fa-phone-alt"></i> Call or message me</h3>
+            <h3><i class="fas fa-phone-alt"></i> <span data-i18n="contact.h3">Call or message me</span></h3>
 
             <div class="contact-detail">
               <i class="fas fa-phone"></i>
@@ -1866,7 +1911,7 @@
             </div>
 
             <div style="margin-top: 2rem; font-size: 0.85rem; color: var(--text-muted);">
-              <i class="fas fa-clock"></i> Mon - Fri: 9:00 - 18:00 · I respond within 24 hours
+              <i class="fas fa-clock"></i> <span data-i18n="contact.hours">Mon - Fri: 9:00 - 18:00 · I respond within 24 hours</span>
             </div>
           </div>
         </div>
@@ -1874,7 +1919,7 @@
     </section>
 
     <footer class="footer">
-      <p><i class="fas fa-spider" style="color: #c6a560; margin-right: 6px;"></i> ERAWEb — affordable web excellence, crafted by Edik. © 2026</p>
+      <p><i class="fas fa-spider" style="color: #c6a560; margin-right: 6px;"></i> <span data-i18n="footer.text">ERAWEb — affordable web excellence, crafted by Edik. © 2026</span></p>
     </footer>
   </div>
 
@@ -1885,6 +1930,303 @@
 
   <script>
     (function() {
+
+      /* ---------- i18n: language switcher (EN / ES / HY) ---------- */
+      const translations = {
+        en: {
+          'meta.title': `Edik | ERAWEb — Digital Craftsman`,
+          'meta.desc': `Edik — creative developer & web architect. Premium, high-performance websites and digital growth for businesses that want to stand out.`,
+          'preloader.loading': `loading experience`,
+          'logo.sub': `Edik`,
+          'nav.home': `Home`, 'nav.skills': `Skills`, 'nav.about': `About`, 'nav.work': `Work`,
+          'nav.pricing': `Pricing`, 'nav.offers': `Offers`, 'nav.services': `Services`, 'nav.contact': `Contact`,
+          'hero.badge': `GOLDEN TOUCH · DIGITAL CRAFTSMAN`,
+          'hero.h1': `Hi, I'm Edik — spinning digital <span class="highlight">masterpieces</span> with precision`,
+          'hero.desc': `Creative developer & web architect. I design immersive, high-performance websites that stand out. This is my ERAWEb portfolio, where every project shines like gold.`,
+          'hero.para': `From bold landing pages to full-scale business platforms, I combine cutting-edge design with clean, maintainable code. Every pixel is intentional. Every interaction is smooth. I don't just build websites — I build your digital identity.`,
+          'hero.stat1': `Projects delivered`, 'hero.stat2': `Client satisfaction %`, 'hero.stat3': `Hour avg. response`,
+          'hero.cta1': `See my work`, 'hero.cta2': `Start a project`,
+          'scroll.cue': `scroll`,
+          'skills.title': `Golden toolbox & expertise`,
+          'skills.subtitle': `I use modern, battle-tested tools to deliver fast, reliable, and visually striking digital experiences.`,
+          'skill.node': `Node.js`, 'skill.js': `JavaScript`, 'skill.html': `Html/CSS`, 'skill.python': `Python/C++`,
+          'skill.uiux': `UI/UX Design`, 'skill.electric': `Electric Tech`, 'skill.solder': `Soldering/Wiring`,
+          'skill.arduino': `Arduino`, 'skill.socialads': `Social Media Ads`, 'skill.seo': `SEO Optimization`,
+          'skill.responsive': `Responsive Design`, 'skill.hosting': `Web Hosting & Deploy`,
+          'about.title': `About me`,
+          'about.h3': `Democratizing digital excellence`,
+          'about.mission1': `I'm <span class="highlight-mission">Edik</span> — a full-stack developer and web architect with a simple belief: <strong>every business deserves a powerful online presence without the astronomical price tag.</strong> The web industry often charges excessive fees, blocking small businesses from growing. I decided to change that.`,
+          'about.mission2': `I believe in fair, transparent pricing. I craft high-end, modern websites and digital tools at a fraction of the regular cost — <span class="highlight-mission">because opportunity shouldn't be a luxury.</span> Let's expand your business together.`,
+          'about.mission3': `Beyond web development, I offer a full range of digital services — targeted social media advertising, brand strategy, and ongoing support. Whether you're a local shop just getting started or an established company looking to modernize, I've got you covered from first click to loyal customer, working directly with you at every step.`,
+          'about.tag1': `Fair pricing`, 'about.tag2': `Modern stack`, 'about.tag3': `Business growth`, 'about.tag4': `Social advertising`,
+          'about.value1.name': `Direct, 1-on-1 collaboration`,
+          'about.value1.desc': `No account managers, no middlemen. You work directly with me from the first call to final launch — clear communication, every step of the way.`,
+          'about.value2.name': `Fast, focused turnaround`,
+          'about.value2.desc': `Without a big team to coordinate, projects move faster. You get a dedicated builder focused entirely on getting your site right.`,
+          'about.quote': `"I started this because I was frustrated watching great local businesses get left behind online. If you have a vision, I have the tools to make it real — at a price that makes sense."`,
+          'projects.title': `Websites I've Made, Worked On, Worked With`,
+          'projects.subtitle': `Coming soon.`,
+          'projects.placeholder.title': `Coming Soon`,
+          'projects.placeholder.desc': `This is where your website will be presented.`,
+          'projects.cta': `Get a website for your business`,
+          'pricing.title': `Transparent, fair pricing`,
+          'pricing.subtitle': `Here's what a custom, fully animated site like this one typically costs in today's market — and what I actually charge for the same quality.`,
+          'pricing.market.label': `Industry average (2026)`,
+          'pricing.market.desc': `What agencies and most freelancers charge for a custom, animated site with this level of design and interactivity. Freelance web designer hourly rates currently run $75–$175/hr in North America and Europe.`,
+          'pricing.mine.badge': `My rate`, 'pricing.mine.label': `What I charge`,
+          'pricing.mine.desc': `Same custom build, same animation and polish — priced fairly because good design shouldn't be reserved for big budgets. No agency markup, no middlemen.`,
+          'pricing.tier1.name': `Starter`, 'pricing.tier1.desc': `A clean, single-page site — perfect for a simple, professional presence.`,
+          'pricing.tier2.name': `Standard`, 'pricing.tier2.desc': `Multi-section custom site with tailored design — similar to this portfolio.`,
+          'pricing.tier3.name': `Premium`, 'pricing.tier3.desc': `Full animation, 3D effects, and interactive polish — the works.`,
+          'pricing.sources': `Market figures based on 2026 industry research: <a href="https://projectcostestimator.com/freelance-website-cost" target="_blank">Project Cost Estimator</a>, <a href="https://www.jim.com/blog/small-business-website-cost" target="_blank">Jim.com</a>, <a href="https://www.biztoolkit.co/post/website-designer-rates-2026" target="_blank">BizToolkit</a>, <a href="https://www.webfx.com/web-design/pricing/" target="_blank">WebFX</a>, and <a href="https://www.gingeritsolutions.com/blog/how-much-does-a-custom-web-design-cost-in-2026/" target="_blank">Ginger IT Solutions</a>.`,
+          'pricing.cta': `Get a quote for your project`,
+          'offers.title': `Offers & bonuses`,
+          'offers.subtitle': `A few ways I like to say thank you — and sweeten the deal.`,
+          'offers.limited.badge': `Limited offer — leaving soon`,
+          'offers.limited.h4': `Free advertising on this website`,
+          'offers.limited.desc': `Buy a website from me, and if you'd like, I'll feature your business right here on ERAWEb for advertising — completely free of charge. It's a limited-time offer, so it won't be around forever.`,
+          'offers.referral.h4': `Referral discount code`,
+          'offers.referral.desc': `Buy a website or any other service and you'll get a personal discount code. Anyone who presents that code for a project gets up to 30% off.`,
+          'offers.bonus.h4': `Referral bonus`,
+          'offers.bonus.desc': `Refer someone to me, and once we successfully finish a project together, you get <span class="highlight-mission">10% off your next service</span> — and it stacks. Every person you refer earns you another 10% off.`,
+          'services.title': `Advertising & Promotion Services`,
+          'services.intro': `Great websites are just the beginning. I also offer full advertising services — from showcasing your business online to running targeted Instagram campaigns that bring real customers through your door.`,
+          'services.block1.title': `Services I Offer`,
+          'services.block1.desc': `A quick overview of what I can help with — from getting your business seen to keeping your site running smoothly.`,
+          'services.item1.h4': `Marketing through this website`,
+          'services.item1.desc': `Get your business featured and promoted right here on ERAWEb, in front of everyone who visits.`,
+          'services.item2.h4': `Marketing through Instagram`,
+          'services.item2.soon': `Coming soon`,
+          'services.item2.desc': `Targeted Instagram campaigns to grow your audience and bring in real customers.`,
+          'services.item3.h4': `Maintenance`,
+          'services.item3.desc': `A monthly plan where I look after your website — updates, monitoring, and small fixes, so you don't have to think about it.`,
+          'services.item4.h4': `Rework & Fixing`,
+          'services.item4.desc': `Already have a site that's broken, outdated, or just not working for you? I'll rework or fix it.`,
+          'services.note': `All pricing varies by project — contact me for further details.`,
+          'services.block2.title': `Instagram Advertising — Grow Your Audience`,
+          'services.block2.desc': `New service — I now run professional Instagram ad campaigns for businesses. Reach the right people, grow your following, and turn scrollers into paying customers.`,
+          'services.ig.h4': `Targeted Instagram Campaigns`,
+          'services.ig.p1': `I handle everything — from designing scroll-stopping creatives to managing your ad budget and tracking results. Every campaign is built around your specific goals: whether that's growing brand awareness, driving traffic to your website, or converting followers into customers.`,
+          'services.ig.p2': `I work with local businesses, e-commerce brands, and service providers. No bloated agency retainers — just honest work, clear reporting, and results you can see.`,
+          'services.ig.cta': `Start your campaign`,
+          'services.ig.f1.strong': `Laser-targeted ads`,
+          'services.ig.f1.span': `I target your ideal audience by location, age, interests, and behavior so every dollar counts.`,
+          'services.ig.f2.strong': `Custom creatives`,
+          'services.ig.f2.span': `Eye-catching posts, Stories, and Reels designed specifically for your brand and audience.`,
+          'services.ig.f3.strong': `Performance reporting`,
+          'services.ig.f3.span': `Clear, weekly reports showing reach, clicks, conversions, and cost per result — no jargon.`,
+          'services.ig.f4.strong': `Affordable packages`,
+          'services.ig.f4.span': `Flexible plans starting from any budget. I scale up as your business grows.`,
+          'contact.title': `Reach out to me`,
+          'contact.h3': `Call or message me`,
+          'contact.hours': `Mon - Fri: 9:00 - 18:00 · I respond within 24 hours`,
+          'footer.text': `ERAWEb — affordable web excellence, crafted by Edik. © 2026`
+        },
+        es: {
+          'meta.title': `Edik | ERAWEb — Artesano Digital`,
+          'meta.desc': `Edik — desarrollador creativo y arquitecto web. Sitios web premium de alto rendimiento y crecimiento digital para negocios que quieren destacar.`,
+          'preloader.loading': `cargando experiencia`,
+          'logo.sub': `Edik`,
+          'nav.home': `Inicio`, 'nav.skills': `Habilidades`, 'nav.about': `Sobre mí`, 'nav.work': `Trabajos`,
+          'nav.pricing': `Precios`, 'nav.offers': `Ofertas`, 'nav.services': `Servicios`, 'nav.contact': `Contacto`,
+          'hero.badge': `TOQUE DORADO · ARTESANO DIGITAL`,
+          'hero.h1': `Hola, soy Edik — creando <span class="highlight">obras maestras</span> digitales con precisión`,
+          'hero.desc': `Desarrollador creativo y arquitecto web. Diseño sitios web inmersivos y de alto rendimiento que destacan. Este es mi portafolio ERAWEb, donde cada proyecto brilla como el oro.`,
+          'hero.para': `Desde landing pages llamativas hasta plataformas empresariales completas, combino un diseño de vanguardia con código limpio y mantenible. Cada píxel es intencional. Cada interacción es fluida. No solo construyo sitios web — construyo tu identidad digital.`,
+          'hero.stat1': `Proyectos entregados`, 'hero.stat2': `% de satisfacción del cliente`, 'hero.stat3': `Horas de respuesta promedio`,
+          'hero.cta1': `Ver mi trabajo`, 'hero.cta2': `Iniciar un proyecto`,
+          'scroll.cue': `desplázate`,
+          'skills.title': `Caja de herramientas y experiencia dorada`,
+          'skills.subtitle': `Uso herramientas modernas y probadas para ofrecer experiencias digitales rápidas, confiables y visualmente impactantes.`,
+          'skill.node': `Node.js`, 'skill.js': `JavaScript`, 'skill.html': `Html/CSS`, 'skill.python': `Python/C++`,
+          'skill.uiux': `Diseño UI/UX`, 'skill.electric': `Tecnología eléctrica`, 'skill.solder': `Soldadura/Cableado`,
+          'skill.arduino': `Arduino`, 'skill.socialads': `Anuncios en redes sociales`, 'skill.seo': `Optimización SEO`,
+          'skill.responsive': `Diseño responsivo`, 'skill.hosting': `Hosting y despliegue web`,
+          'about.title': `Sobre mí`,
+          'about.h3': `Democratizando la excelencia digital`,
+          'about.mission1': `Soy <span class="highlight-mission">Edik</span> — desarrollador full-stack y arquitecto web con una creencia simple: <strong>todo negocio merece una presencia en línea poderosa sin un precio astronómico.</strong> La industria web suele cobrar tarifas excesivas, impidiendo que los pequeños negocios crezcan. Decidí cambiar eso.`,
+          'about.mission2': `Creo en precios justos y transparentes. Diseño sitios web y herramientas digitales modernas y de alta gama a una fracción del costo habitual — <span class="highlight-mission">porque la oportunidad no debería ser un lujo.</span> Hagamos crecer tu negocio juntos.`,
+          'about.mission3': `Más allá del desarrollo web, ofrezco una gama completa de servicios digitales — publicidad dirigida en redes sociales, estrategia de marca y soporte continuo. Ya seas un negocio local que recién comienza o una empresa establecida que busca modernizarse, te acompaño desde el primer clic hasta convertirte en un cliente fiel, trabajando directamente contigo en cada paso.`,
+          'about.tag1': `Precios justos`, 'about.tag2': `Tecnología moderna`, 'about.tag3': `Crecimiento del negocio`, 'about.tag4': `Publicidad en redes sociales`,
+          'about.value1.name': `Colaboración directa, uno a uno`,
+          'about.value1.desc': `Sin gestores de cuenta, sin intermediarios. Trabajas directamente conmigo desde la primera llamada hasta el lanzamiento final — comunicación clara, en cada paso del camino.`,
+          'about.value2.name': `Entrega rápida y enfocada`,
+          'about.value2.desc': `Sin un gran equipo que coordinar, los proyectos avanzan más rápido. Tienes un desarrollador dedicado, enfocado por completo en hacer bien tu sitio.`,
+          'about.quote': `"Empecé esto porque me frustraba ver cómo grandes negocios locales se quedaban atrás en internet. Si tienes una visión, yo tengo las herramientas para hacerla realidad — a un precio que tiene sentido."`,
+          'projects.title': `Sitios web que he creado, en los que he trabajado y colaborado`,
+          'projects.subtitle': `Próximamente.`,
+          'projects.placeholder.title': `Próximamente`,
+          'projects.placeholder.desc': `Aquí es donde se presentará tu sitio web.`,
+          'projects.cta': `Consigue un sitio web para tu negocio`,
+          'pricing.title': `Precios transparentes y justos`,
+          'pricing.subtitle': `Esto es lo que normalmente cuesta hoy en el mercado un sitio personalizado y totalmente animado como este — y lo que realmente cobro por la misma calidad.`,
+          'pricing.market.label': `Promedio de la industria (2026)`,
+          'pricing.market.desc': `Lo que cobran las agencias y la mayoría de los freelancers por un sitio personalizado y animado con este nivel de diseño e interactividad. Las tarifas por hora de los diseñadores web freelance actualmente rondan los $75–$175/hora en Norteamérica y Europa.`,
+          'pricing.mine.badge': `Mi tarifa`, 'pricing.mine.label': `Lo que yo cobro`,
+          'pricing.mine.desc': `La misma construcción personalizada, la misma animación y el mismo acabado — con un precio justo, porque el buen diseño no debería reservarse solo para grandes presupuestos. Sin márgenes de agencia, sin intermediarios.`,
+          'pricing.tier1.name': `Inicial`, 'pricing.tier1.desc': `Un sitio de una sola página, limpio — perfecto para una presencia simple y profesional.`,
+          'pricing.tier2.name': `Estándar`, 'pricing.tier2.desc': `Sitio personalizado de varias secciones con diseño a medida — similar a este portafolio.`,
+          'pricing.tier3.name': `Premium`, 'pricing.tier3.desc': `Animación completa, efectos 3D y acabado interactivo — todo incluido.`,
+          'pricing.sources': `Cifras de mercado basadas en investigación de la industria de 2026: <a href="https://projectcostestimator.com/freelance-website-cost" target="_blank">Project Cost Estimator</a>, <a href="https://www.jim.com/blog/small-business-website-cost" target="_blank">Jim.com</a>, <a href="https://www.biztoolkit.co/post/website-designer-rates-2026" target="_blank">BizToolkit</a>, <a href="https://www.webfx.com/web-design/pricing/" target="_blank">WebFX</a> y <a href="https://www.gingeritsolutions.com/blog/how-much-does-a-custom-web-design-cost-in-2026/" target="_blank">Ginger IT Solutions</a>.`,
+          'pricing.cta': `Solicita una cotización para tu proyecto`,
+          'offers.title': `Ofertas y bonificaciones`,
+          'offers.subtitle': `Algunas formas en las que me gusta decir gracias — y mejorar el trato.`,
+          'offers.limited.badge': `Oferta limitada — se acaba pronto`,
+          'offers.limited.h4': `Publicidad gratuita en este sitio web`,
+          'offers.limited.desc': `Compra un sitio web conmigo y, si quieres, presentaré tu negocio aquí mismo en ERAWEb para publicidad — completamente gratis. Es una oferta por tiempo limitado, así que no estará disponible para siempre.`,
+          'offers.referral.h4': `Código de descuento por referido`,
+          'offers.referral.desc': `Compra un sitio web o cualquier otro servicio y recibirás un código de descuento personal. Cualquiera que presente ese código para un proyecto obtiene hasta un 30% de descuento.`,
+          'offers.bonus.h4': `Bono por referidos`,
+          'offers.bonus.desc': `Refiéreme a alguien y, una vez que terminemos con éxito un proyecto juntos, obtienes <span class="highlight-mission">10% de descuento en tu próximo servicio</span> — y se acumula. Cada persona que refieras te gana otro 10% de descuento.`,
+          'services.title': `Servicios de publicidad y promoción`,
+          'services.intro': `Los grandes sitios web son solo el comienzo. También ofrezco servicios completos de publicidad — desde mostrar tu negocio en línea hasta ejecutar campañas dirigidas en Instagram que traen clientes reales a tu puerta.`,
+          'services.block1.title': `Servicios que ofrezco`,
+          'services.block1.desc': `Un resumen rápido de en qué puedo ayudarte — desde dar visibilidad a tu negocio hasta mantener tu sitio funcionando sin problemas.`,
+          'services.item1.h4': `Marketing a través de este sitio web`,
+          'services.item1.desc': `Consigue que tu negocio sea destacado y promocionado aquí mismo en ERAWEb, frente a todos los que visitan el sitio.`,
+          'services.item2.h4': `Marketing a través de Instagram`,
+          'services.item2.soon': `Próximamente`,
+          'services.item2.desc': `Campañas dirigidas en Instagram para hacer crecer tu audiencia y atraer clientes reales.`,
+          'services.item3.h4': `Mantenimiento`,
+          'services.item3.desc': `Un plan mensual en el que cuido tu sitio web — actualizaciones, monitoreo y pequeñas correcciones, para que no tengas que preocuparte por ello.`,
+          'services.item4.h4': `Reparación y mejoras`,
+          'services.item4.desc': `¿Ya tienes un sitio que está roto, desactualizado o que simplemente no te está funcionando? Lo reparo o lo mejoro.`,
+          'services.note': `Todos los precios varían según el proyecto — contáctame para más detalles.`,
+          'services.block2.title': `Publicidad en Instagram — Haz crecer tu audiencia`,
+          'services.block2.desc': `Nuevo servicio — ahora gestiono campañas publicitarias profesionales en Instagram para negocios. Llega a las personas correctas, haz crecer tus seguidores y convierte a los que solo miran en clientes que pagan.`,
+          'services.ig.h4': `Campañas dirigidas de Instagram`,
+          'services.ig.p1': `Me encargo de todo — desde diseñar creatividades que detienen el scroll hasta gestionar tu presupuesto publicitario y hacer seguimiento de resultados. Cada campaña se construye en torno a tus objetivos específicos: ya sea aumentar el reconocimiento de marca, generar tráfico hacia tu sitio web o convertir seguidores en clientes.`,
+          'services.ig.p2': `Trabajo con negocios locales, marcas de comercio electrónico y proveedores de servicios. Sin contratos de agencia inflados — solo trabajo honesto, informes claros y resultados que puedes ver.`,
+          'services.ig.cta': `Comienza tu campaña`,
+          'services.ig.f1.strong': `Anuncios ultra dirigidos`,
+          'services.ig.f1.span': `Dirijo tus anuncios a tu audiencia ideal según ubicación, edad, intereses y comportamiento, para que cada dólar cuente.`,
+          'services.ig.f2.strong': `Creatividades personalizadas`,
+          'services.ig.f2.span': `Publicaciones, historias y reels llamativos diseñados específicamente para tu marca y tu audiencia.`,
+          'services.ig.f3.strong': `Informes de rendimiento`,
+          'services.ig.f3.span': `Informes semanales claros que muestran alcance, clics, conversiones y costo por resultado — sin tecnicismos.`,
+          'services.ig.f4.strong': `Paquetes accesibles`,
+          'services.ig.f4.span': `Planes flexibles a partir de cualquier presupuesto. Escalo contigo a medida que tu negocio crece.`,
+          'contact.title': `Ponte en contacto conmigo`,
+          'contact.h3': `Llámame o escríbeme`,
+          'contact.hours': `Lun - Vie: 9:00 - 18:00 · Respondo dentro de 24 horas`,
+          'footer.text': `ERAWEb — excelencia web accesible, creada por Edik. © 2026`
+        },
+        hy: {
+          'meta.title': `Էդիկ | ERAWEb — Թվային Վարպետ`,
+          'meta.desc': `Էդիկ — կրեատիվ ծրագրավորող և վեբ ճարտարապետ։ Բարձրակարգ, բարձր արդյունավետությամբ կայքեր և թվային աճ այն բիզնեսների համար, ովքեր ցանկանում են աչքի ընկնել։`,
+          'preloader.loading': `փորձառության բեռնում`,
+          'logo.sub': `Էդիկ`,
+          'nav.home': `Գլխավոր`, 'nav.skills': `Հմտություններ`, 'nav.about': `Իմ մասին`, 'nav.work': `Աշխատանքներ`,
+          'nav.pricing': `Գներ`, 'nav.offers': `Առաջարկներ`, 'nav.services': `Ծառայություններ`, 'nav.contact': `Կապ`,
+          'hero.badge': `ՈՍԿԵ ՇՈՇԱՓՈՒՄ · ԹՎԱՅԻՆ ՎԱՐՊԵՏ`,
+          'hero.h1': `Բարև, ես Էդիկն եմ — ստեղծում եմ թվային <span class="highlight">գլուխգործոցներ</span> ճշգրտությամբ`,
+          'hero.desc': `Կրեատիվ ծրագրավորող և վեբ ճարտարապետ։ Ես նախագծում եմ տպավորիչ, բարձր արդյունավետությամբ կայքեր, որոնք աչքի են ընկնում։ Սա իմ ERAWEb պորտֆոլիոն է, որտեղ յուրաքանչյուր նախագիծ փայլում է ինչպես ոսկի։`,
+          'hero.para': `Համարձակ վայրէջքի էջերից մինչև լիամասշտաբ բիզնես հարթակներ, ես համատեղում եմ առաջադեմ դիզայնը մաքուր, հեշտ սպասարկվող կոդի հետ։ Յուրաքանչյուր փիքսել միտումնավոր է։ Յուրաքանչյուր փոխազդեցություն սահուն է։ Ես ոչ միայն կայքեր եմ ստեղծում — ես կերտում եմ ձեր թվային ինքնությունը։`,
+          'hero.stat1': `Ավարտված նախագծեր`, 'hero.stat2': `Հաճախորդների գոհունակություն %`, 'hero.stat3': `Պատասխանի միջին ժամ`,
+          'hero.cta1': `Տեսնել իմ աշխատանքները`, 'hero.cta2': `Սկսել նախագիծ`,
+          'scroll.cue': `ոլորել`,
+          'skills.title': `Ոսկե գործիքակազմ և փորձառություն`,
+          'skills.subtitle': `Ես օգտագործում եմ ժամանակակից, փորձարկված գործիքներ՝ արագ, հուսալի և տեսողականորեն տպավորիչ թվային փորձառություններ մատուցելու համար։`,
+          'skill.node': `Node.js`, 'skill.js': `JavaScript`, 'skill.html': `Html/CSS`, 'skill.python': `Python/C++`,
+          'skill.uiux': `UI/UX Դիզայն`, 'skill.electric': `Էլեկտրատեխնիկա`, 'skill.solder': `Զոդում/Մալուխակցում`,
+          'skill.arduino': `Arduino`, 'skill.socialads': `Սոցիալական ցանցերի գովազդ`, 'skill.seo': `SEO Օպտիմիզացում`,
+          'skill.responsive': `Հարմարվողական դիզայն`, 'skill.hosting': `Վեբ հոսթինգ և տեղակայում`,
+          'about.title': `Իմ մասին`,
+          'about.h3': `Ժողովրդավարացնելով թվային գերազանցությունը`,
+          'about.mission1': `Ես <span class="highlight-mission">Էդիկն</span> եմ — full-stack ծրագրավորող և վեբ ճարտարապետ մեկ պարզ համոզմունքով. <strong>ամեն բիզնես արժանի է հզոր առցանց ներկայության՝ առանց աստղաբաշխական գնի։</strong> Վեբ ոլորտը հաճախ գանձում է չափազանցված վճարներ՝ խանգարելով փոքր բիզնեսների աճին։ Ես որոշեցի փոխել դա։`,
+          'about.mission2': `Ես հավատում եմ արդար, թափանցիկ գնագոյացմանը։ Ես ստեղծում եմ բարձրակարգ, ժամանակակից կայքեր և թվային գործիքներ՝ սովորական արժեքի մի մասով, <span class="highlight-mission">որովհետև հնարավորությունը չպետք է լինի շքեղություն։</span> Եկեք միասին զարգացնենք ձեր բիզնեսը։`,
+          'about.mission3': `Վեբ ծրագրավորումից բացի, ես առաջարկում եմ թվային ծառայությունների ամբողջական շրջանակ՝ նպատակային գովազդ սոցիալական ցանցերում, բրենդի ռազմավարություն և շարունակական աջակցություն։ Անկախ նրանից՝ նոր սկսնակ տեղական խանութ եք, թե հաստատված ընկերություն, որը ցանկանում է արդիականացվել, ես ձեզ հետ եմ առաջին կտտոցից մինչև հավատարիմ հաճախորդ դառնալը՝ աշխատելով անմիջականորեն ձեզ հետ յուրաքանչյուր քայլում։`,
+          'about.tag1': `Արդար գներ`, 'about.tag2': `Ժամանակակից տեխնոլոգիաներ`, 'about.tag3': `Բիզնեսի աճ`, 'about.tag4': `Սոցիալական գովազդ`,
+          'about.value1.name': `Ուղղակի, մեկ առ մեկ համագործակցություն`,
+          'about.value1.desc': `Ոչ մի հաշվի կառավարիչ, ոչ մի միջնորդ։ Դուք աշխատում եք ուղղակիորեն ինձ հետ՝ առաջին զանգից մինչև վերջնական մեկնարկը — հստակ հաղորդակցություն, յուրաքանչյուր քայլում։`,
+          'about.value2.name': `Արագ, կենտրոնացված կատարում`,
+          'about.value2.desc': `Առանց մեծ թիմ համակարգելու անհրաժեշտության՝ նախագծերն ավելի արագ են առաջ շարժվում։ Դուք ստանում եք նվիրված մասնագետ, ով ամբողջությամբ կենտրոնացած է ձեր կայքը ճիշտ անելու վրա։`,
+          'about.quote': `«Ես սկսեցի սա, քանի որ հիասթափված էի՝ տեսնելով, թե ինչպես են հրաշալի տեղական բիզնեսները մնում առցանց աշխարհից դուրս։ Եթե ունեք տեսլական, ես ունեմ գործիքներ այն իրականություն դարձնելու համար՝ գնով, որը տրամաբանական է։»`,
+          'projects.title': `Կայքեր, որոնք ես ստեղծել եմ, աշխատել եմ դրանց վրա և համագործակցել եմ`,
+          'projects.subtitle': `Շուտով։`,
+          'projects.placeholder.title': `Շուտով`,
+          'projects.placeholder.desc': `Այստեղ կներկայացվի ձեր կայքը։`,
+          'projects.cta': `Ստացեք կայք ձեր բիզնեսի համար`,
+          'pricing.title': `Թափանցիկ, արդար գնագոյացում`,
+          'pricing.subtitle': `Ահա, թե ինչքան սովորաբար արժե նման, ամբողջովին անիմացված կայքը այսօրվա շուկայում — և ինչքան ես իրականում գանձում եմ նույն որակի համար։`,
+          'pricing.market.label': `Ոլորտի միջին ցուցանիշ (2026)`,
+          'pricing.market.desc': `Այն, ինչ գործակալությունները և ֆրիլանսերների մեծ մասը գանձում են այս մակարդակի դիզայնով և ինտերակտիվությամբ պատվերով անիմացված կայքի համար։ Ֆրիլանս վեբ դիզայներների ժամային դրույքաչափերը ներկայումս կազմում են $75–$175/ժամ Հյուսիսային Ամերիկայում և Եվրոպայում։`,
+          'pricing.mine.badge': `Իմ դրույքաչափը`, 'pricing.mine.label': `Ինչ եմ ես գանձում`,
+          'pricing.mine.desc': `Նույն պատվերով կառուցումը, նույն անիմացիան և կատարելագործումը — արդար գնով, որովհետև լավ դիզայնը չպետք է վերապահված լինի միայն մեծ բյուջեների համար։ Ոչ մի գործակալության հավելավճար, ոչ մի միջնորդ։`,
+          'pricing.tier1.name': `Սկզբնական`, 'pricing.tier1.desc': `Մաքուր, մեկ էջանոց կայք — կատարյալ պարզ, պրոֆեսիոնալ ներկայության համար։`,
+          'pricing.tier2.name': `Ստանդարտ`, 'pricing.tier2.desc': `Բազմաբաժին պատվերով կայք հարմարեցված դիզայնով — նման այս պորտֆոլիոյին։`,
+          'pricing.tier3.name': `Պրեմիում`, 'pricing.tier3.desc': `Ամբողջական անիմացիա, 3D էֆեկտներ և ինտերակտիվ կատարելագործում — ամեն ինչ ներառված։`,
+          'pricing.sources': `Շուկայական ցուցանիշները հիմնված են 2026 թվականի ոլորտային հետազոտության վրա՝ <a href="https://projectcostestimator.com/freelance-website-cost" target="_blank">Project Cost Estimator</a>, <a href="https://www.jim.com/blog/small-business-website-cost" target="_blank">Jim.com</a>, <a href="https://www.biztoolkit.co/post/website-designer-rates-2026" target="_blank">BizToolkit</a>, <a href="https://www.webfx.com/web-design/pricing/" target="_blank">WebFX</a> և <a href="https://www.gingeritsolutions.com/blog/how-much-does-a-custom-web-design-cost-in-2026/" target="_blank">Ginger IT Solutions</a>։`,
+          'pricing.cta': `Ստացեք գնանշում ձեր նախագծի համար`,
+          'offers.title': `Առաջարկներ և բոնուսներ`,
+          'offers.subtitle': `Մի քանի եղանակ, որով ես սիրում եմ շնորհակալություն հայտնել — և քաղցրացնել գործարքը։`,
+          'offers.limited.badge': `Սահմանափակ առաջարկ — շուտով ավարտվում է`,
+          'offers.limited.h4': `Անվճար գովազդ այս կայքում`,
+          'offers.limited.desc': `Գնեք կայք ինձնից, և եթե ցանկանաք, ես կներկայացնեմ ձեր բիզնեսը հենց այստեղ՝ ERAWEb-ում, գովազդի նպատակով — լիովին անվճար։ Սա սահմանափակ ժամկետով առաջարկ է, ուստի այն միշտ հասանելի չի լինի։`,
+          'offers.referral.h4': `Հանձնարարական զեղչի կոդ`,
+          'offers.referral.desc': `Գնեք կայք կամ ցանկացած այլ ծառայություն, և դուք կստանաք անհատական զեղչի կոդ։ Ցանկացած ոք, ով ներկայացնում է այդ կոդը նախագծի համար, ստանում է մինչև 30% զեղչ։`,
+          'offers.bonus.h4': `Հանձնարարական բոնուս`,
+          'offers.bonus.desc': `Հանձնարարեք ինձ որևէ մեկին, և հենց մենք հաջողությամբ ավարտենք նախագիծը միասին, դուք ստանում եք <span class="highlight-mission">10% զեղչ ձեր հաջորդ ծառայության վրա</span> — և այն կուտակվում է։ Յուրաքանչյուր անձ, ում հանձնարարում եք, ձեզ բերում է ևս 10% զեղչ։`,
+          'services.title': `Գովազդի և առաջխաղացման ծառայություններ`,
+          'services.intro': `Հիանալի կայքերը միայն սկիզբն են։ Ես նաև առաջարկում եմ գովազդի ամբողջական ծառայություններ՝ ձեր բիզնեսը առցանց ցուցադրելուց մինչև Instagram-ում նպատակային արշավների վարում, որոնք իրական հաճախորդներ են բերում ձեր դռան մոտ։`,
+          'services.block1.title': `Ծառայություններ, որոնք ես առաջարկում եմ`,
+          'services.block1.desc': `Արագ ակնարկ այն մասին, թե ինչով կարող եմ օգնել — ձեր բիզնեսի տեսանելիությունից մինչև ձեր կայքի սահուն աշխատանքի պահպանում։`,
+          'services.item1.h4': `Մարքեթինգ այս կայքի միջոցով`,
+          'services.item1.desc': `Ձեր բիզնեսը կներկայացվի և կխթանվի հենց այստեղ՝ ERAWEb-ում, բոլոր այցելուների առջև։`,
+          'services.item2.h4': `Մարքեթինգ Instagram-ի միջոցով`,
+          'services.item2.soon': `Շուտով`,
+          'services.item2.desc': `Նպատակային Instagram արշավներ՝ ձեր լսարանն ընդլայնելու և իրական հաճախորդներ բերելու համար։`,
+          'services.item3.h4': `Սպասարկում`,
+          'services.item3.desc': `Ամսական ծրագիր, որով ես հոգ եմ տանում ձեր կայքի մասին — թարմացումներ, մոնիտորինգ և փոքր ուղղումներ, որպեսզի ձեզ չպետք գա մտածել այդ մասին։`,
+          'services.item4.h4': `Վերամշակում և ուղղում`,
+          'services.item4.desc': `Արդեն ունե՞ք կայք, որը կոտրված է, հնացած կամ պարզապես չի աշխատում ձեզ համար։ Ես կվերամշակեմ կամ կուղղեմ այն։`,
+          'services.note': `Բոլոր գները տարբերվում են ըստ նախագծի — կապվեք ինձ հետ լրացուցիչ մանրամասների համար։`,
+          'services.block2.title': `Instagram գովազդ — Ընդլայնեք ձեր լսարանը`,
+          'services.block2.desc': `Նոր ծառայություն — ես այժմ վարում եմ պրոֆեսիոնալ Instagram գովազդային արշավներ բիզնեսների համար։ Հասեք ճիշտ մարդկանց, ընդլայնեք ձեր հետևորդների թիվը և վերածեք դիտողներին վճարող հաճախորդների։`,
+          'services.ig.h4': `Նպատակային Instagram արշավներ`,
+          'services.ig.p1': `Ես հոգում եմ ամեն ինչի մասին — ուշադրություն գրավող կրեատիվների ձևավորումից մինչև ձեր գովազդային բյուջեի կառավարումը և արդյունքների հետևումը։ Յուրաքանչյուր արշավ կառուցվում է ձեր կոնկրետ նպատակների շուրջ՝ լինի դա բրենդի ճանաչելիության աճը, ձեր կայք տրաֆիկի ուղղորդումը, թե հետևորդների վերածումը հաճախորդների։`,
+          'services.ig.p2': `Ես աշխատում եմ տեղական բիզնեսների, էլեկտրոնային առևտրի բրենդների և ծառայություններ մատուցողների հետ։ Առանց ուռճացված գործակալական պայմանագրերի — միայն ազնիվ աշխատանք, հստակ հաշվետվություններ և արդյունքներ, որոնք կարող եք տեսնել։`,
+          'services.ig.cta': `Սկսեք ձեր արշավը`,
+          'services.ig.f1.strong': `Ճշգրիտ նպատակային գովազդներ`,
+          'services.ig.f1.span': `Ես ուղղորդում եմ ձեր գովազդները ձեր իդեալական լսարանին՝ ըստ տեղանքի, տարիքի, հետաքրքրությունների և վարքագծի, որպեսզի յուրաքանչյուր դոլար նշանակություն ունենա։`,
+          'services.ig.f2.strong': `Անհատականացված կրեատիվներ`,
+          'services.ig.f2.span': `Աչքի ընկնող փոստեր, Story-ներ և Reels-ներ, նախագծված հատուկ ձեր բրենդի և լսարանի համար։`,
+          'services.ig.f3.strong': `Արդյունավետության հաշվետվություններ`,
+          'services.ig.f3.span': `Հստակ, շաբաթական հաշվետվություններ, որոնք ցույց են տալիս հասանելիությունը, կտտոցները, փոխարկումները և արդյունքի արժեքը — առանց մասնագիտական ժարգոնի։`,
+          'services.ig.f4.strong': `Մատչելի փաթեթներ`,
+          'services.ig.f4.span': `Ճկուն ծրագրեր՝ սկսած ցանկացած բյուջեից։ Ես մեծացնում եմ մասշտաբը՝ ձեր բիզնեսի աճին զուգընթաց։`,
+          'contact.title': `Կապվեք ինձ հետ`,
+          'contact.h3': `Զանգահարեք կամ գրեք ինձ`,
+          'contact.hours': `Երկ - Ուրբ՝ 9:00 - 18:00 · Ես պատասխանում եմ 24 ժամվա ընթացքում`,
+          'footer.text': `ERAWEb — մատչելի վեբ գերազանցություն, ստեղծված Էդիկի կողմից։ © 2026`
+        }
+      };
+
+      function applyLanguage(lang) {
+        const dict = translations[lang] || translations.en;
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+          const key = el.getAttribute('data-i18n');
+          if (dict[key] !== undefined) {
+            el.innerHTML = dict[key];
+          }
+        });
+        if (dict['meta.title']) document.title = dict['meta.title'];
+        const metaDesc = document.getElementById('pageDesc');
+        if (metaDesc && dict['meta.desc']) metaDesc.setAttribute('content', dict['meta.desc']);
+        document.documentElement.setAttribute('lang', lang);
+        document.querySelectorAll('.lang-btn').forEach((btn) => {
+          btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+        try { localStorage.setItem('erawebLang', lang); } catch (e) {}
+      }
+
+      document.querySelectorAll('.lang-btn').forEach((btn) => {
+        btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang')));
+      });
+
+      let initialLang = 'en';
+      try { initialLang = localStorage.getItem('erawebLang') || 'en'; } catch (e) {}
+      applyLanguage(initialLang);
 
       /* ---------- Preloader ---------- */
       window.addEventListener('load', () => {
